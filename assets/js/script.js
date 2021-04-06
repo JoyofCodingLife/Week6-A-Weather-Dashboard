@@ -28,7 +28,7 @@ var searchHistoryList =[];
 
 // RESULT SECTION
 
- // Current Weather
+// Current Weather
  function currentWeather(city) {
     var currentWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
     $.ajax({
@@ -43,19 +43,7 @@ var searchHistoryList =[];
         var iconID = weatherResponse.weather[0].icon;
         var iconURL = `http://openweathermap.org/img/wn/${iconID}.png`;
 
-        // UV index requires another API data collection plus city geo coordinates
-        var lon = weatherResponse.coord.lon;
-        var lat = weatherResponse.coord.lat;
 
-        var uviURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=${apiKey}`;
-        $.ajax({
-            url: uviURL,
-            method: "GET",
-        }). then (function(uviResponse) {
-            console.log(uviResponse);
-            var uvIndex = uviResponse.current.uvi;
-            console.log(uvIndex);
-        });
 
         var currentCity = $(`
         <h2 id="currentCity">${weatherResponse.name} <img src="${iconURL}" alt="${weatherResponse.weather[0].description}"/> ${currentDay}</h2>
@@ -63,12 +51,40 @@ var searchHistoryList =[];
         <p>Temperature: ${weatherResponse.main.temp} °C</p>
         <p>Humidity: ${weatherResponse.main.humidity} \%</p>
         <p>Wind Speed: ${weatherResponse.wind.speed} MPH</p>
-        <p>UV Index: ${uvIndex}</p>
-
         `);
         $("#currentWeather").append(currentCity);
 
+        // UV Index requires another API data collection plus city geo coordinates
+        var lat = weatherResponse.coord.lat;
+        var lon = weatherResponse.coord.lon;
+        forecast(lat, lon);
+
+        var uviURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely,hourly,alerts&appid=${apiKey}`;
+        $.ajax({
+            url: uviURL,
+            method: "GET",
+        }). then (function(uviResponse) {
+            console.log(uviResponse);
+
+            var uvIndex = uviResponse.current.uvi;
+            console.log(uvIndex);
+
+            $("#currentWeather").append($(`<p>UV Index: <span id="uviColor">${uvIndex}</span></p>`));
+
+            // UV Index color-coding
+
+            if (uvIndex >= 0 && uvIndex <= 2){
+                $("#uviColor").css("background-color", "#65cc1e");
+            }
+
+
+        });
 
     });
     
 };
+
+// 5-day Forecast
+ function forecast(lat,lon){
+ 
+ };

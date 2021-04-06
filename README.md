@@ -22,7 +22,12 @@ https://joyofcodinglife.github.io/Week6-A-Weather-Dashboard/
 
 ## Walkthrough
 
-- ![#d6cfc7](https://via.placeholder.com/15/d6cfc7/000000?text=+) `#d6cfc7` - past;
+UV Index Range
+- ![#65cc1e](https://via.placeholder.com/15/65cc1e/000000?text=+) `#65cc1e` - Low           <2
+- ![#ffde](https://via.placeholder.com/15/ffde/000000?text=+) `#ffde` - Moderate            3 to 5 
+- ![#ffa500](https://via.placeholder.com/15/ffa500/000000?text=+) `#ffa500` - High          6 to 7 
+- ![#e60073](https://via.placeholder.com/15/e60073/000000?text=+) `#e60073` - Very high     8 to 10 
+- ![#9572ff](https://via.placeholder.com/15/9572ff/000000?text=+) `#9572ff` - Expreme       11+ 
 
 <br>
 
