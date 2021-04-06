@@ -14,9 +14,13 @@ font-family: 'Roboto', sans-serif;
 body {
     font-family: 'Roboto', sans-serif;
 }
+h2 {
+    font-family: 'Gloria Hallelujah', cursive;
+}
 h3 {
     font-family: 'Bangers', cursive;
 }
+
 
 /* HEADING SECTION */
 #heading {
@@ -25,9 +29,9 @@ h3 {
     font-family: 'Bangers', cursive;
 }
 
-/* SEARCH SECTION #searchCity #searchBtn */
+/* SEARCH SECTION */
 #searchedCities {
     font-family: 'Gloria Hallelujah', cursive;
 }
 
-/* RESULT SECTION #currentCity #forecast */
+/* RESULT SECTION */
