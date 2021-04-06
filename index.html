@@ -28,45 +28,62 @@
     </div>
 
     <!-- MAIN CONTAINER -->
-    <div class="row" >
+    <div class="row">
 
       <!-- SEARCH SECTION -->
       <div class="col-4" style="background-color: aqua;">
+
         <div class="row">
           <!-- Searcg Bar -->
-          <div class="col-12" id="searchBar">
-            Search
+          <div class="col-12">
+            <h3>Search for a City:</h3>
+            <div class="input-group mb-3">
+              <input type="search" class="form-control" id="searchBar" placeholder="Name of the city...">
+              <button class="btn btn-outline-primary" id="searchBtn"><i class="fas fa-search-location"></i></button>
+            </div>
+
           </div>
         </div>
-        <!-- Saved Search -->
+      
         <div class="row">
-          <div class="col-12" id="savedSearch">
+            <!-- Saved Search -->
+          <div class="col-12">
+            <ul class="list-group" id="searchHistory">
+              <!-- display <li> here, style class="list-group-item list-group-item-action" -->
             Saved Search
+            </ul>
           </div>
-          </div>
-      </div>
+        </div>
 
+      </div>
 
       <!-- RESULT SECTION -->
       <div class="col-8" style="background-color: rgb(212, 0, 255);">
+        
         <div class="row">
-          <!-- Result for today's -->
-          <div class="col-12">
-            Result
+          <!-- Weather for today -->
+          <div class="col-12 mb-3" id="currentCity">
+            <!-- display <p> here with currentCity -->
+            Current City
           </div>
         </div>
-        <div class="col-8" style="background-color: rgb(212, 0, 255);">
-          <div class="row">
-            <!-- Forecast for 5 days -->
-            <div class="col-12">
-              Result
-            </div>
+
+        <div class="row">
+          <!-- Forecast for 5 days -->
+          <div class="col-12">
+            <h3>5- Day Forecast:</h3>
           </div>
+        </div>
+
+        <div class="row">
+          <!-- Forecast for 5 days -->
+          <div class="col-12" id="forecast">
+            <!-- display <div> with 5 cards -->
+            Forecast
+          </div>
+        </div>
 
       </div>
-
-
-
 
     </div>
 

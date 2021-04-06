@@ -1,5 +1,33 @@
+/* Import font styles */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Gloria+Hallelujah&family=Roboto&display=swap');
+
+/* Fonts list
+Heading
+font-family: 'Bangers', cursive;
+Handwritting
+font-family: 'Gloria Hallelujah', cursive;
+General
+font-family: 'Roboto', sans-serif;
+*/
+
+/* GLOBAL STYLE */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+h3 {
+    font-family: 'Bangers', cursive;
+}
+
 /* HEADING SECTION */
 #heading {
     background-color: rgb(59, 59, 59);
     color: #fff;
+    font-family: 'Bangers', cursive;
 }
+
+/* SEARCH SECTION #searchBar #searchBtn */
+#searchHistory {
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+/* RESULT SECTION #currentCity #forecast */

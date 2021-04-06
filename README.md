@@ -16,7 +16,7 @@
 <br>
 
 ### Live URL
-https://joyofcodinglife.github.io/
+https://joyofcodinglife.github.io/Week6-A-Weather-Dashboard/
 
 <br>
 
