@@ -3,6 +3,7 @@ var apiKey = "34294986534f43665a27b0eb1f9cf2fd";
 var currentDay = moment().format("MMM Do YYYY");
 var searchButton = $("#searchBtn");
 var searchHistoryList =[];
+var clearAllButton = $("#clearAllBtn");
 
 // RESULT SECTION --------------------------------------------
 // Current Weather
@@ -11,12 +12,12 @@ var searchHistoryList =[];
     $.ajax({
         url: currentWeatherURL,
         method: "GET",
-    }).then (function(weatherResponse) {;
+    }).then (function(weatherResponse) {
         $("#resultSection").css("display", "block");
         $("#currentWeather").empty();
 
         var iconID = weatherResponse.weather[0].icon;
-        var iconURL = `http://openweathermap.org/img/wn/${iconID}.png`;
+        var iconURL = `http://openweathermap.org/img/wn/${iconID}@2x.png`;
 
         var currentCity = $(`
         <h2 id="currentCity">${weatherResponse.name} <img src="${iconURL}" alt="${weatherResponse.weather[0].description}"/> ${currentDay}</h2>
@@ -78,18 +79,16 @@ var searchHistoryList =[];
                 uvindex: oneCallResponse.daily[i].uvi,
             };
             var cardDate = moment.unix(cityInfo.date).format("DD/MM/YYYY");
-            var weatherIcon = `<img src="http://openweathermap.org/img/wn/${cityInfo.icon}.png" alt="${cityInfo.description}"/>`;
+            var weatherIcon = `<img src="http://openweathermap.org/img/wn/${cityInfo.icon}@2x.png" alt="${cityInfo.description}"/>`;
             var forecastCard = $(`
-            <div class="col">
-                <div class="card bg-info text-light" style="width: 10rem";>
-                    <div class="card-body">
+                <div class="col m-2 mb-2 rounded bg-info text-light";>
+                    <div class="card-body" align="center">
                         <h6>${cardDate}</h6>
                         <p>${weatherIcon}</p>
                         <p>Temp: ${cityInfo.temperature} °C</p>
                         <p>Humidity: ${cityInfo.humidity}\%</p>                         
                     </div>
                 </div>
-            <div>
             `);
             $("#forecast").append(forecastCard);
         }
@@ -107,7 +106,7 @@ var searchHistoryList =[];
         searchHistoryList.push(city);
         var searchHistory = $(`
         <li>${city}</li>
-        `).addClass("list-group-item list-group-item-action");
+        `).addClass("list-group-item list-group-item-action searchCity");
         $("#searchedCities").append(searchHistory);
     };
     // saves to local storage
@@ -129,4 +128,10 @@ var searchHistoryList =[];
         var lastSearchedCity = savedHistory[lastSearch];
         currentWeather(lastSearchedCity);
     };
- });
+});
+
+// Clear All Button
+ clearAllButton.on("click", function() {
+    localStorage.clear();
+    window.location.reload();
+})
