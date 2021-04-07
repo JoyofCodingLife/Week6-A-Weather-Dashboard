@@ -68,4 +68,4 @@ Quote that recently inspired me:
     –Someone
 
 ---
-© 2021 L Korolyovas
+© 2021 L Korolyova
