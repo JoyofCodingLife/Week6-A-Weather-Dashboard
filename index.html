@@ -31,7 +31,7 @@
     <div class="row">
 
       <!-- SEARCH SECTION -->
-      <div class="col-4">
+      <div class="col-3">
 
         <div class="row">
           <!-- Search Bar -->
@@ -39,7 +39,7 @@
             <h3>Search for a City:</h3>
             <div class="input-group mb-3">
               <input type="search" class="form-control" id="searchCity" placeholder="Name of the city...">
-              <button class="btn btn-outline-primary" id="searchBtn"><i class="fas fa-search-location"></i></button>
+              <button class="btn btn-info" id="searchBtn"><i class="fas fa-search-location"></i></button>
             </div>
 
           </div>
@@ -57,10 +57,11 @@
       </div>
 
       <!-- RESULT SECTION -->
-      <div class="col-8" sid="resultSection">
+      <div class="col-9" id="resultSection">
         
         <div class="row">
           <!-- Current Weather -->
+          <h3>Current Weather:</h3>
           <div class="col-12 mb-3" id="currentWeather">
             <!-- display <p> here with currentCity -->
           </div>
@@ -73,11 +74,8 @@
           </div>
         </div>
 
-        <div class="row">
-          <!-- Forecast for 5 days -->
-          <div class="col-12" id="forecast">
+        <div class="row row-cols-1 row-cols-md-5 g-2" id="forecast">
             <!-- display <div> with 5 cards -->
-          </div>
         </div>
 
       </div>

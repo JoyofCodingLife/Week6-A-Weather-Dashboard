@@ -39,10 +39,6 @@ h3 {
     padding: 4px;
 }
 
-/* UVI Colors
-Low <2 #65cc1e
-Moderate 3to5 #ffde32
-High 6to7 #ffa500
-Very high 8to10 #e60073
-Expreme 11+ #9572ff
-*/
+#resultSection {
+    display: none;
+}
