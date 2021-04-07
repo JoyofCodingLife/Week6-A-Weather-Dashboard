@@ -21,7 +21,6 @@ h3 {
     font-family: 'Bangers', cursive;
 }
 
-
 /* HEADING SECTION */
 #heading {
     background-color: rgb(59, 59, 59);
@@ -32,6 +31,12 @@ h3 {
 /* SEARCH SECTION */
 #searchedCities {
     font-family: 'Gloria Hallelujah', cursive;
+}
+
+button :hover {
+    color: white;
+    transition: 0.5s;
+    font-size: larger;
 }
 
 /* RESULT SECTION */

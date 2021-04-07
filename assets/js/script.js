@@ -4,8 +4,7 @@ var currentDay = moment().format("MMM Do YYYY");
 var searchButton = $("#searchBtn");
 var searchHistoryList =[];
 
-// RESULT SECTION
-
+// RESULT SECTION --------------------------------------------
 // Current Weather
  function currentWeather(city) {
     var currentWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
@@ -43,10 +42,7 @@ var searchHistoryList =[];
             <span id="uviColor">${uvIndex}</span>
             </p>`));
 
-            forecast(lat, lon);
-
             // UV Index color-coding
-
             if (uvIndex >= 0 && uvIndex <= 2.99){
                 $("#uviColor").css("background-color", "#65cc1e");
             } else if (uvIndex >= 3 && uvIndex <= 5.99){
@@ -58,6 +54,8 @@ var searchHistoryList =[];
             } else {
                 $("#uviColor").css("background-color", "#9572ff");
             };
+            // Linking to Forecast
+            forecast(lat, lon);
         });
     });
 };
@@ -82,32 +80,29 @@ var searchHistoryList =[];
             var cardDate = moment.unix(cityInfo.date).format("DD/MM/YYYY");
             var weatherIcon = `<img src="http://openweathermap.org/img/wn/${cityInfo.icon}.png" alt="${cityInfo.description}"/>`;
             var forecastCard = $(`
-                   <div class="col">
-                       <div class="card bg-info text-light" style="width: 12rem";>
-                           <div class="card-body">
-                               <h6>${cardDate}</h6>
-                               <p>${weatherIcon}</p>
-                               <p>Temp: ${cityInfo.temperature} °C</p>
-                               <p>Humidity: ${cityInfo.humidity}\%</p>                         
-                           </div>
-                       </div>
-                   <div>
-               `);
-               $("#forecast").append(forecastCard);
+            <div class="col">
+                <div class="card bg-info text-light" style="width: 10rem";>
+                    <div class="card-body">
+                        <h6>${cardDate}</h6>
+                        <p>${weatherIcon}</p>
+                        <p>Temp: ${cityInfo.temperature} °C</p>
+                        <p>Humidity: ${cityInfo.humidity}\%</p>                         
+                    </div>
+                </div>
+            <div>
+            `);
+            $("#forecast").append(forecastCard);
         }
     }); 
 };
 
-
-// SEARCH SECTION
-
- // Search button event listener
+// SEARCH SECTION --------------------------------------------
+// Event listener for Search button
  searchButton.on("click", function(event) {
     event.preventDefault();
 
     var city = $("#searchCity").val().trim();
     currentWeather(city);
-
     if (!searchHistoryList.includes(city)){
         searchHistoryList.push(city);
         var searchHistory = $(`
@@ -115,9 +110,22 @@ var searchHistoryList =[];
         `).addClass("list-group-item list-group-item-action");
         $("#searchedCities").append(searchHistory);
     };
-
+    // saves to local storage
     localStorage.setItem("city", JSON.stringify(searchHistoryList));
 });
+ 
+// Event listener for Searched Cities
+ $(document).on("click", ".list-group-item", function() {
+    var cityList = $(this).text();
+    currentWeather(cityList);
+});
 
+//  Saved Search History
+ $(document).ready(function() {
+    var savedHistory = JSON.parse(localStorage.getItem("city"));
+    if (savedHistory !== nul) {
+
+    }
+});
    
 
