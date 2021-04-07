@@ -15,7 +15,6 @@
 The task of this assignment was to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS powered by JavaScript with use of jQuery, Bootstrap and Moment.js all together, and retrieve
 data from 3rd party API [OpenWeather API](https://openweathermap.org/api).
 
-
 <br>
 
 ### Live URL
@@ -52,7 +51,6 @@ The following images show the web application's appearance.
 
 ![Responsive Layout Preview](./assets/images/ResponsivePreview.png)
 
-
 <br>
 
 ## Contributing
@@ -64,7 +62,10 @@ Please make sure to update tests as appropriate.
 ## Notes
 Quote that recently inspired me:
 
-    “Give yourself another day, another chance. You will find your courage eventually. Don’t give up on yourself just yet.”  –Someone
+    “Give yourself another day, another chance. 
+    You will find your courage eventually. 
+    Don’t give up on yourself just yet.”
+    –Someone
 
 ---
 © 2021 L Korolyovas
