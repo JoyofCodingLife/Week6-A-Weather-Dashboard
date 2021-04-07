@@ -22,7 +22,7 @@ var searchHistoryList =[];
         <h2 id="currentCity">${weatherResponse.name} <img src="${iconURL}" alt="${weatherResponse.weather[0].description}"/> ${currentDay}</h2>
         <p>Country: ${weatherResponse.sys.country}</p>
         <p>Temperature: ${weatherResponse.main.temp} °C</p>
-        <p>Humidity: ${weatherResponse.main.humidity} \%</p>
+        <p>Humidity: ${weatherResponse.main.humidity}\%</p>
         <p>Wind Speed: ${weatherResponse.wind.speed} MPH</p>
         `);
         $("#currentWeather").append(currentCity);
@@ -120,12 +120,13 @@ var searchHistoryList =[];
     currentWeather(cityList);
 });
 
-//  Saved Search History
+// EXTRA BITS --------------------------------------------
+//  On refersh shows last Searched City
  $(document).ready(function() {
     var savedHistory = JSON.parse(localStorage.getItem("city"));
-    if (savedHistory !== nul) {
-
-    }
-});
-   
-
+    if (savedHistory !== null) {
+        var lastSearch = savedHistory.length - 1;
+        var lastSearchedCity = savedHistory[lastSearch];
+        currentWeather(lastSearchedCity);
+    };
+ });
