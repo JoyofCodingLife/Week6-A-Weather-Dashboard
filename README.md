@@ -18,7 +18,7 @@ data from 3rd party API [OpenWeather API](https://openweathermap.org/api).
 <br>
 
 ### Live URL
-https://korolyovalara.github.io/Week6-A-Weather-Dashboard/
+https://korolyovalara.github.io/Weather-Dashboard/
 
 <br>
 
